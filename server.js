@@ -2,9 +2,10 @@ const express = require('express');
 const faker = require('faker');
 
 const app = express();
+const port = 6011;
 
-app.listen(6001, function() {
-    console.log('Listening on 6001');
+app.listen(port, function() {
+    console.log('Listening on ' + port);
 });
 
 app.get('/', (req, res) => {
@@ -21,7 +22,8 @@ app.get('/user', (req, res) => {
         lastName: lastName,
         email: email,
         phone: phone,
-        server: 1
+        server: 2,
+        port: port
     };
     
     res.send(user);
